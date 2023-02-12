@@ -16,19 +16,15 @@ const clickHandler =() =>{
     setTitle("Ajay");
 };
 
-const [amount,setAmount]=useState(props.amount);
-const updateExpense=()=>{
-    setAmount(100);
-}
+
   return (
         <Card className='expense-item'>
             <ExpenseDate date={props.date}/>
             <div className='expense-item__description'>
                 <h2>{title}</h2>
-                <div className='expense-item__price'>${amount}</div>
+                <div className='expense-item__price'>${props.amount}</div>
             </div>
             <button onClick={clickHandler}>Change Title</button>
-            <button onClick={updateExpense}>update Expense</button>
         </Card>
     )
 }
