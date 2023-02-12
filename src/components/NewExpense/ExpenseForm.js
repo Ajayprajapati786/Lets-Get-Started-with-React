@@ -46,17 +46,17 @@ const ExpenseForm = () =>{
        
     }
 
-    const makingObject =(event)=>{
-        event.preventDefault();
-        console.log("clicked")
-        var obj ={
-            Title:enteredtitle,
-            Amount:enteredAmount,
-            Date:enteredDate
-        }
-        console.log(obj);
+   const submitHandler =(event)=>{
+    event.preventDefault();
+
+    const expenseData = {
+        title:enteredtitle,
+        amount:enteredAmount,
+        date:new Date(enteredDate)
     }
-  return <form>
+    console.log(expenseData);
+   }
+  return <form onSubmit={submitHandler}>
   <div className="new-expense__controls">
         <div className="new-expense__control">
             <label>Title</label>
@@ -74,7 +74,7 @@ const ExpenseForm = () =>{
         </div>
 
         <div className="new-expense__actions">
-            <button type="submit" onClick={makingObject}>Add expense</button>
+            <button type="submit" >Add expense</button>
         </div> 
 
   </div>
