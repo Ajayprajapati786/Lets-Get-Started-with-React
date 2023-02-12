@@ -42,6 +42,19 @@ const ExpenseForm = () =>{
         //     ...userInput,
         //     enteredDate:event.target.value,
         // })
+
+       
+    }
+
+    const makingObject =(event)=>{
+        event.preventDefault();
+        console.log("clicked")
+        var obj ={
+            Title:enteredtitle,
+            Amount:enteredAmount,
+            Date:enteredDate
+        }
+        console.log(obj);
     }
   return <form>
   <div className="new-expense__controls">
@@ -61,7 +74,7 @@ const ExpenseForm = () =>{
         </div>
 
         <div className="new-expense__actions">
-            <button type="submit">Add expense</button>
+            <button type="submit" onClick={makingObject}>Add expense</button>
         </div> 
 
   </div>
